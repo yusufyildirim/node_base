@@ -1,5 +1,5 @@
 import express from 'express';
-import { isAuthenticated } from '../../utils/auth';
+import { auth } from '../../middlewares';
 import ExampleRoute from './ExampleRoute';
 const router = express.Router();
 
@@ -7,7 +7,7 @@ const router = express.Router();
 router.use('/example', ExampleRoute);
 
 // Auth required
-router.use(isAuthenticated);
+router.use(auth.isAuthenticated);
 //router.use('/example', ExampleRoute);
 
 export default router;

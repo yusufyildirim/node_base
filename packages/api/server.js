@@ -5,7 +5,7 @@ import http from 'http';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import v1 from './routes/v1';
-import errorHandler from './utils/errorHandler';
+import { errorHandler } from './middlewares';
 
 const app = express();
 

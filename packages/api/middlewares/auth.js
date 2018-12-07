@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import { constants } from '../resources';
-import { AuthorizationError } from './errors';
+import { AuthorizationError } from '../utils/errors';
 import errorHandler from './errorHandler';
 
 function isAuthenticated(req, res, next) {
@@ -26,7 +26,7 @@ function generateToken(userId) {
   return jwt.sign({ userId }, constants.AUTH_SECRET);
 }
 
-export {
+export default {
   isAuthenticated,
   generateToken,
 };

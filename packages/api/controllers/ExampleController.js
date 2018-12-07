@@ -1,6 +1,6 @@
 import { LogicError } from '../utils/errors';
 
-async function root(req, res) {
+async function root(req, res, next) {
   try {
     // throw new LogicError('test_error')
     return res.json({ result: 'ok' });

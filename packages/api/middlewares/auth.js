@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import { constants } from '../resources';
 import { AuthorizationError } from '../utils/errors';
-import errorHandler from './errorHandler';
+// import errorHandler from './errorHandler';
 
 function isAuthenticated(req, res, next) {
   const { authorization } = req.headers;
@@ -10,16 +10,15 @@ function isAuthenticated(req, res, next) {
   const [bearer, token] = authorization.split(' ');
 
   if (bearer === 'Bearer' && token) {
-    jwt.verify(token, constants.AUTH_SECRET, (err, decoded) => {
+    return jwt.verify(token, constants.AUTH_SECRET, (err, decoded) => {
       if (err) return next(new AuthorizationError('token_not_valid'));
 
       req.userId = decoded.userId;
 
       return next();
     });
-  } else {
-    return next(new AuthorizationError('token_should_bearer'));
   }
+  return next(new AuthorizationError('token_should_bearer'));
 }
 
 function generateToken(userId) {

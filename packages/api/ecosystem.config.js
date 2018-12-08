@@ -5,7 +5,7 @@ module.exports = {
       script: 'server.js',
       interpreter: 'babel-node',
       watch: true,
-      ignore_watch : ['node_modules'],
+      ignore_watch: ['node_modules'],
       env: {
         NODE_ENV: 'development',
         node_args: [

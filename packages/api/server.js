@@ -1,6 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import path from 'path';
+// import path from 'path';
 import http from 'http';
 import helmet from 'helmet';
 import morgan from 'morgan';
@@ -29,13 +29,13 @@ app.use('/api', (req, res) => res.send({ error: 'no_route_found' }));
 app.use(errorHandler);
 
 // Serv static files
-//app.use(express.static('./../client/dist/'));
+// app.use(express.static('./../client/dist/'));
 
 // Send all other requests to client
-//app.use((req, res) => res.sendFile(path.join(__dirname, './../client/dist/', 'index.html')));
+// app.use((req, res) => res.sendFile(path.join(__dirname, './../client/dist/', 'index.html')));
 
 http
   .createServer(app)
   .listen(80);
 
-console.log('Server started to listening!');
+console.log('You can test services by http://localhost:8080/api/v1/example');// eslint-disable-line no-console

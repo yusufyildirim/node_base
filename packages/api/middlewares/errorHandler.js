@@ -1,6 +1,6 @@
 import { i18n } from '../resources';
 
-export default function errorHandler(err, req, res, next) {
+export default function errorHandler(err, req, res /* , next */) {
   // If error thrown by us
   if (err.type) {
     return res.status(err.status).send({
@@ -11,6 +11,6 @@ export default function errorHandler(err, req, res, next) {
       },
     });
   }
-  console.log(err);
+  console.log(err);// eslint-disable-line no-console
   return res.status(500).send({ error: { code: 'unknown_error' } });
 }

@@ -9,7 +9,5 @@
   },
   "author": "Yusuf YILDIRIM",
   "license": "ISC",
-  "devDependencies": {
-    "lerna": "^2.11.0"
-  }
+  "dependencies": {}
 }

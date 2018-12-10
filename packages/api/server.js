@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import http from 'http';
 import helmet from 'helmet';
 import morgan from 'morgan';
+import objection from './utils/objection';
 import v1 from './routes/v1';
 import { errorHandler } from './middlewares';
 

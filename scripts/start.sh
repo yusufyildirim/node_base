@@ -5,9 +5,6 @@ ROOT=/usr/src/app
 API_PATH=$ROOT/packages/api/
 CLIENT_PATH=$ROOT/packages/client/
 
-# Does NPM installations and packaging
-#lerna bootstrap
-
 #### CLIENT COMMANDS ####
 #cd $CLIENT_PATH
 

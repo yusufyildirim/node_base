@@ -5,4 +5,3 @@ WORKDIR /usr/src/app
 
 # install global dependencies
 RUN npm install pm2 -g
-RUN npm install lerna -g

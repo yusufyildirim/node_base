@@ -1,14 +1,14 @@
-console.time('Startup');
+// console.time('Startup');
 const express = require('express');
 const bodyParser = require('body-parser');
 const http = require('http');
 const helmet = require('helmet');
 const morgan = require('morgan');
-const v1 = require('./routes/v1');
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
 const { errorHandler } = require('./middlewares');
-import swaggerUi from 'swagger-ui-express';
-import swaggerDocument from './swagger.json';
-
+const v1 = require('./routes/v1');
+const objection = require('./utils/objection');// eslint-disable-line no-unused-vars
 
 const app = express();
 
@@ -45,5 +45,4 @@ http
   .listen(80);
 
 console.log('You can test services by http://localhost:8080/api/v1/docs');// eslint-disable-line no-console
-console.log('Server started to listening!');
-console.timeEnd('Startup');
+// console.timeEnd('Startup');

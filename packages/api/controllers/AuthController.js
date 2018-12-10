@@ -50,7 +50,7 @@ async function login(req, res, next) {
 
     return res.json({ token });
   } catch (e) {
-    next(e);
+    return next(e);
   }
 }
 

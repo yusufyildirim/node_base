@@ -1,4 +1,4 @@
-const { LogicError } = require('../utils/errors');
+// const { LogicError } = require('../utils/errors');
 
 async function root(req, res, next) {
   // const {} = req.body;

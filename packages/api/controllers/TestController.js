@@ -11,6 +11,6 @@ async function root(req, res, next) {
   }
 }
 
-export default {
+module.exports = {
   root,
 };

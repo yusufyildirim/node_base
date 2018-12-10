@@ -5,4 +5,4 @@ const router = express.Router();
 
 router.get('/', ExampleController.root);
 
-module.exports =  router;
+module.exports = router;

@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const { constants } = require('../resources');
 const { AuthorizationError } = require('../utils/errors');
-const errorHandler = require('./errorHandler');
+// const errorHandler = require('./errorHandler');
 
 function isAuthenticated(req, res, next) {
   const { authorization } = req.headers;

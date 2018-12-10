@@ -8,6 +8,10 @@
    "basePath": "/api/v1",
    "tags": [
      {
+       "name": "auth",
+       "description": "User authentication functions"
+     },
+     {
        "name": "test",
        "description": "Service test functions"
      }
@@ -16,6 +20,65 @@
       "application/json"
    ],
    "paths":{
+      "/auth/login":{
+         "post":{
+            "x-swagger-router-controller":"api/v1/example",
+            "tags":["auth"],
+            "operationId": "auth_login",
+            "description":"Logs user into the system",
+            "parameters":[
+              {
+                "name": "email",
+                "in": "formData",
+                "description": "The user email for login",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "name": "password",
+                "in": "formData",
+                "description": "The password for login",
+                "required": true,
+                "type": "string"
+              }
+            ],
+            "responses":{
+              "200": {
+                "description": "successful operation"
+              },
+              "400": {
+                "description": "Invalid  operation"
+              }
+            }
+         }
+      },
+      "/auth/register":{
+         "post":{
+            "x-swagger-router-controller":"api/v1/example",
+            "tags":["auth"],
+            "operationId": "auth_register",
+            "description":"Register user into the system",
+            "parameters":[
+              {
+                "in": "body",
+                "name": "body",
+                "description": "Created user object",
+                "required": true,
+                "schema": {
+                  "$ref": "#/definitions/User"
+                }
+              }
+            ],
+            "responses":{
+              "200": {
+                "description": "successful operation"
+              },
+              "400": {
+                "description": "Invalid username/password supplied"
+              }
+            }
+         }
+      },
       "/test":{
          "get":{
             "x-swagger-router-controller":"api/v1/example",
@@ -35,34 +98,16 @@
           "type": "integer",
           "format": "int64"
         },
-        "firstName": {
+        "firstname": {
           "type": "string"
         },
-        "lastName": {
+        "lastname": {
           "type": "string"
-        },
-        "displayName": {
-          "type": "string"
-        },
-        "enabled": {
-          "type": "boolean"
         },
         "email": {
           "type": "string"
         },
-        "pin": {
-          "type": "string"
-        },
-        "username": {
-          "type": "string"
-        },
         "password": {
-          "type": "string"
-        },
-        "voipUsername": {
-          "type": "string"
-        },
-        "voipPassword": {
           "type": "string"
         }
       },

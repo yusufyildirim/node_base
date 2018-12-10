@@ -1,10 +1,11 @@
-import { Model } from 'objection';
+const { Model } = require('objection');
 
 class QB extends Model.QueryBuilder {
 }
-
-export default class BaseModel extends Model {
+class BaseModel extends Model {
   static get QueryBuilder() {
     return QB;
   }
 }
+
+module.exports = BaseModel;

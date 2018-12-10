@@ -1,6 +1,6 @@
-import { Model, knexSnakeCaseMappers } from 'objection';
-import knex from 'knex';
-import config from '../knexfile';
+const { Model, knexSnakeCaseMappers } = require('objection');
+const knex = require('knex');
+const config = require('../knexfile');
 
 // Initialize knex.
 const connection = knex({

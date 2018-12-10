@@ -1,7 +1,7 @@
-import constants from './constants';
-import i18n from './i18n';
+const constants = require('./constants');
+const i18n = require('./i18n');
 
-export {
+module.exports = {
   constants,
   i18n,
 };

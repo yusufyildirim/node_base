@@ -1,7 +1,7 @@
-import { User } from '../models';
-import { LogicError } from '../utils/errors';
-import hash from '../utils/hash';
-import { auth } from '../middlewares';
+const { User } = require('../models');
+const { LogicError } = require('../utils/errors');
+const hash = require('../utils/hash');
+const { auth } = require('../middlewares');
 
 async function register(req, res, next) {
   const { email, password, firstname, lastname } = req.body;
@@ -54,7 +54,7 @@ async function login(req, res, next) {
   }
 }
 
-export default {
+module.exports = {
   register,
   login,
 };

@@ -1,7 +1,7 @@
-import ExampleController from './ExampleController';
-import AuthController from './AuthController';
+const ExampleController = require('./ExampleController');
+const AuthController = require('./AuthController');
 
-export {
+module.exports = {
   ExampleController,
   AuthController,
 };

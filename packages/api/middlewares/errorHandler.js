@@ -1,6 +1,6 @@
-import { i18n } from '../resources';
+const { i18n } = require('../resources');
 
-export default function errorHandler(err, req, res, next) {
+module.exports =  function errorHandler(err, req, res, next) {
   // If error thrown by us
   if (err.type) {
     return res.status(err.status).send({

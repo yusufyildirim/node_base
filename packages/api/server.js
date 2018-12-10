@@ -1,12 +1,11 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import path from 'path';
-import http from 'http';
-import helmet from 'helmet';
-import morgan from 'morgan';
-import objection from './utils/objection';
-import v1 from './routes/v1';
-import { errorHandler } from './middlewares';
+console.time('Startup');
+const express = require('express');
+const bodyParser = require('body-parser');
+const http = require('http');
+const helmet = require('helmet');
+const morgan = require('morgan');
+const v1 = require('./routes/v1');
+const { errorHandler } = require('./middlewares');
 
 const app = express();
 
@@ -40,3 +39,4 @@ http
   .listen(80);
 
 console.log('Server started to listening!');
+console.timeEnd('Startup');

@@ -34,7 +34,7 @@ class ForbiddenError extends StandartError {
   }
 }
 
-export {
+module.exports = {
   StandartError,
   LogicError,
   ValidationError,

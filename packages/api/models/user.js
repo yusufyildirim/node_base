@@ -1,16 +1,20 @@
-import BaseModel from './baseModel';
+const BaseModel = require('./baseModel');
 
-export default class User extends BaseModel {
-  static tableName = 'user';
+class User extends BaseModel {
+  static tableName() { return 'user'; }
 
   // static getBy = (column, value) => User.query().where(column, value).first();
 
-  fullName = () => this.firstName + this.lastName;
+  fullName() { return this.firstName + this.lastName; }
 
-  static jsonSchema = {
-    type: 'object',
-    id: { type: 'integer' },
-    firstName: { type: 'string', minLength: 1, maxLength: 255 },
-    lastName: { type: 'string', minLength: 1, maxLength: 255 },
-  };
+  static jsonSchema() {
+    return {
+      type: 'object',
+      id: { type: 'integer' },
+      firstName: { type: 'string', minLength: 1, maxLength: 255 },
+      lastName: { type: 'string', minLength: 1, maxLength: 255 },
+    };
+  }
 }
+
+module.exports = User;

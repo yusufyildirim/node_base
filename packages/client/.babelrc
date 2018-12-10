@@ -1,0 +1,11 @@
+{
+  "presets": ["env", "react", "stage-0"],
+  "plugins": [
+    "transform-class-properties",
+    ["import", { "libraryName": "antd", "libraryDirectory": "es" }],
+    ["module-resolver", {
+      "root": ["./src"]
+    }],
+    ["react-css-modules", {}]
+  ]
+}

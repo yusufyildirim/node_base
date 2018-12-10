@@ -1,0 +1,11 @@
+{
+  "modules": true,
+  "plugins": {
+    "postcss-cssnext": {},
+    "postcss-for": {},
+    "postcss-modules": {
+      "generateScopedName": "[path]___[name]__[local]___[hash:base64:5]",
+      "globalModulePaths": ["./global"]
+    }
+  }
+}

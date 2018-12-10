@@ -1,0 +1,70 @@
+.flex {
+  display: flex;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.flex_1 {
+  display: flex;
+  flex: 1;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+@for $i from 5 to 40 by 5{
+    .marginL-$i { margin-left: $(i)px; }
+    .marginR-$i { margin-right: $(i)px; }
+    .marginH-$i { margin-left: $(i)px; margin-right: $(i)px; }
+
+    .marginT-$i { margin-top: $(i)px; }
+    .marginB-$i { margin-bottom: $(i)px; }
+    .marginV-$i { margin-top: $(i)px; margin-bottom: $(i)px; }
+
+    .paddingL-$i { padding-left: $(i)px; }
+    .paddingR-$i { padding-right: $(i)px; }
+    .paddingH-$i { padding-left: $(i)px; padding-right: $(i)px; }
+
+    .paddingT-$i { padding-top: $(i)px; }
+    .paddingB-$i { padding-bottom: $(i)px; }
+    .paddingV-$i { padding-top: $(i)px; padding-bottom: $(i)px; }
+}
+
+/* ANTD OVERRIDE */
+.ant-layout {
+  background: transparent;
+}
+
+.ant-layout-header {
+  min-height: 100px;
+  height: auto;
+}
+
+.ant-form-explain, .ant-form-extra {
+  margin-top: 0px;
+}
+
+.ant-checkbox-wrapper {
+  line-height: normal;
+}
+
+.ant-checkbox-inner {
+  width: 18px;
+  height: 18px;
+}

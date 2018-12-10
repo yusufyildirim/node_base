@@ -1,0 +1,12 @@
+{
+    "extends": "airbnb",
+    "plugins": [
+        "import"
+    ],
+    "settings": {
+        "import/resolver": {
+            "babel-module": {
+            }
+        }
+    }
+}

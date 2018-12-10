@@ -5,8 +5,11 @@ import http from 'http';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import objection from './utils/objection';
+import swaggerUi from 'swagger-ui-express';
+import swaggerDocument from './swagger.json';
 import v1 from './routes/v1';
 import { errorHandler } from './middlewares';
+
 
 const app = express();
 
@@ -19,6 +22,9 @@ app.use(morgan('dev'));
 
 // Extra protection
 app.use(helmet());
+
+// Swagger Interface
+app.use('/api/v1/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Routes
 app.use('/api/v1', v1);
@@ -39,4 +45,4 @@ http
   .createServer(app)
   .listen(80);
 
-console.log('You can test services by http://localhost:8080/api/v1/example');// eslint-disable-line no-console
+console.log('You can test services by http://localhost:8080/api/v1/docs');// eslint-disable-line no-console

@@ -1,8 +1,6 @@
 // import { LogicError } from '../utils/errors';
 
 async function root(req, res, next) {
-  // const {} = req.body;
-
   try {
     // throw new LogicError('test_error')
     return res.json({ result: Date.now() });

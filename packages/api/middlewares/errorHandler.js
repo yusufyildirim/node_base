@@ -1,6 +1,6 @@
 const { i18n } = require('../resources');
 
-module.exports = function errorHandler(err, req, res/* , next */) {
+module.exports = function errorHandler(err, req, res, next) {
   // If error thrown by us
   if (err.type) {
     return res.status(err.status).send({

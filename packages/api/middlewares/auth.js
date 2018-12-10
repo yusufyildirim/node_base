@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const { constants } = require('../resources');
 const { AuthorizationError } = require('../utils/errors');
-const errorHandler = require('./errorHandler');
+// const errorHandler = require('./errorHandler');
 
 function isAuthenticated(req, res, next) {
   const { authorization } = req.headers;
@@ -10,16 +10,15 @@ function isAuthenticated(req, res, next) {
   const [bearer, token] = authorization.split(' ');
 
   if (bearer === 'Bearer' && token) {
-    jwt.verify(token, constants.AUTH_SECRET, (err, decoded) => {
+    return jwt.verify(token, constants.AUTH_SECRET, (err, decoded) => {
       if (err) return next(new AuthorizationError('token_not_valid'));
 
       req.userId = decoded.userId;
 
       return next();
     });
-  } else {
-    return next(new AuthorizationError('token_should_bearer'));
   }
+  return next(new AuthorizationError('token_should_bearer'));
 }
 
 function generateToken(userId) {

@@ -15,3 +15,10 @@ Node / Express / Docker API Boilerplate
 * npm install
 * parcel index.html
 * http://localhost:1234 to test
+
+## Docker commands:
+### List Docker:
+docker ps
+
+### Connect Docker:
+docker exec -it CONTAINER_ID /bin/bash 

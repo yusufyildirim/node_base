@@ -3,7 +3,7 @@ const baseUrl = {
   development: 'http://localhost:8080',
 };
 
-export default {
+module.exports = {
   baseUrl: baseUrl[ENV],
   AUTH_SECRET: 'secret_key',
 };

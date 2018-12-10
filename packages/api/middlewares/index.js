@@ -1,7 +1,7 @@
-import auth from './auth';
-import errorHandler from './errorHandler';
+const auth = require('./auth');
+const errorHandler = require('./errorHandler');
 
-export {
+module.exports = {
   auth,
   errorHandler,
 };

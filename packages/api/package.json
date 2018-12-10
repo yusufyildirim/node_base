@@ -26,14 +26,9 @@
 		"swagger-ui-express": "^4.0.1"
 	},
 	"devDependencies": {
-		"@babel/cli": "^7.1.0",
-		"@babel/core": "^7.1.0",
-		"@babel/node": "^7.1.0",
-		"@babel/plugin-proposal-class-properties": "^7.2.1",
-		"@babel/preset-env": "^7.1.0",
-		"babel-eslint": "^10.0.1",
 		"eslint": "^5.10.0",
 		"eslint-config-airbnb-base": "^13.1.0",
-		"eslint-plugin-import": "^2.13.0"
+		"eslint-plugin-import": "^2.13.0",
+		"nodemon": "^1.18.7"
 	}
 }

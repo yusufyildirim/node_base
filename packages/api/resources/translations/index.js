@@ -1,5 +1,5 @@
-import en from './en';
+const en = require('./en');
 
-export default {
+module.exports = {
   en,
 };

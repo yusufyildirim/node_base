@@ -1,7 +1,7 @@
-import jwt from 'jsonwebtoken';
-import { constants } from '../resources';
-import { AuthorizationError } from '../utils/errors';
-// import errorHandler from './errorHandler';
+const jwt = require('jsonwebtoken');
+const { constants } = require('../resources');
+const { AuthorizationError } = require('../utils/errors');
+const errorHandler = require('./errorHandler');
 
 function isAuthenticated(req, res, next) {
   const { authorization } = req.headers;
@@ -25,7 +25,7 @@ function generateToken(userId) {
   return jwt.sign({ userId }, constants.AUTH_SECRET);
 }
 
-export default {
+module.exports = {
   isAuthenticated,
   generateToken,
 };

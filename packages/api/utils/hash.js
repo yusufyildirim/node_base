@@ -1,4 +1,4 @@
-import bcrypt from 'bcrypt';
+const bcrypt = require('bcrypt');
 
 const BCRYPT_SALT_ROUNDS = 12;
 
@@ -10,7 +10,7 @@ function compare(pw, h) {
   return bcrypt.compareSync(pw, h);
 }
 
-export default {
+module.exports = {
   password,
   compare,
 };

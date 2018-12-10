@@ -1,0 +1,10 @@
+.container {
+  background-repeat: no-repeat;
+  background-position: center 110px;
+  background-size: 100%;
+}
+
+.logo {
+  width: 200px;
+  margin-bottom: 40px;
+}

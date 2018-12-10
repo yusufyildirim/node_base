@@ -1,8 +1,7 @@
-import express from 'express';
-import { auth } from '../../middlewares';
-import ExampleRoute from './ExampleRoute';
-import AuthRoute from './AuthRoute';
-import TestRoute from './TestRoute';
+const express = require('express');
+const { auth } = require('../../middlewares');
+const ExampleRoute = require('./ExampleRoute');
+const AuthRoute = require('./AuthRoute');
 
 const router = express.Router();
 
@@ -15,4 +14,4 @@ router.use('/test', TestRoute);
 router.use(auth.isAuthenticated);
 // router.use('/example', ExampleRoute);
 
-export default router;
+module.exports =  router;

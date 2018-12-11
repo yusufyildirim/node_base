@@ -1,16 +1,21 @@
 const BaseModel = require('./baseModel');
 
 class User extends BaseModel {
-  static tableName() { return 'user'; }
+  static get tableName() { return 'user'; }
 
-  // static getBy = (column, value) => User.query().where(column, value).first();
+  static get virtualAttributes() {
+    return ['fullName'];
+  }
 
   fullName() { return this.firstName + this.lastName; }
 
-  static jsonSchema() {
+  static get jsonSchema() {
     return {
       type: 'object',
-      id: { type: 'integer' },
+      required: ['email', 'password'],
+
+      email : { type: 'string' },
+      password : { type: 'string' },
       firstName: { type: 'string', minLength: 1, maxLength: 255 },
       lastName: { type: 'string', minLength: 1, maxLength: 255 },
     };

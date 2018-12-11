@@ -21,8 +21,7 @@ async function register(req, res, next) {
         password: hash.password(password),
         firstname,
         lastname,
-      })
-      .catch(() => { throw new LogicError('unable_to_create_user'); });
+      });
 
     const token = auth.generateToken(user.id);
 

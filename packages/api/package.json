@@ -1,12 +1,11 @@
 {
 	"name": "api",
 	"version": "0.1.0",
-	
 	"description": "Node API",
 	"main": "server.js",
 	"author": "Yusuf YILDIRIM",
 	"engines": {
-			"node": ">=10.5.0"
+		"node": ">=10.5.0"
 	},
 	"scripts": {
 		"start": "knex migrate:latest && pm2 start ecosystem.config.js && pm2 logs",

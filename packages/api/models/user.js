@@ -1,4 +1,5 @@
 const BaseModel = require('./baseModel');
+const Joi = require('../utils/joi');
 
 class User extends BaseModel {
   static get tableName() { return 'user'; }
@@ -9,16 +10,13 @@ class User extends BaseModel {
 
   fullName() { return this.firstName + this.lastName; }
 
-  static get jsonSchema() {
+  static get schema() {
     return {
-      type: 'object',
-      required: ['email', 'password'],
-
-      email : { type: 'string' },
-      password : { type: 'string' },
-      firstName: { type: 'string', minLength: 1, maxLength: 255 },
-      lastName: { type: 'string', minLength: 1, maxLength: 255 },
-    };
+      email: Joi.string().email().lowercase().required(),
+      password: Joi.string().required(),
+      firstname: Joi.string(),
+      lastname: Joi.string(),
+    }
   }
 }
 

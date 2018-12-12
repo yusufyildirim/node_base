@@ -1,18 +1,21 @@
 const BaseModel = require('./baseModel');
+const Joi = require('../utils/joi');
 
 class User extends BaseModel {
-  static tableName() { return 'user'; }
+  static get tableName() { return 'user'; }
 
-  // static getBy = (column, value) => User.query().where(column, value).first();
+  static get virtualAttributes() {
+    return ['fullName'];
+  }
 
   fullName() { return this.firstName + this.lastName; }
 
-  static jsonSchema() {
+  static get schema() {
     return {
-      type: 'object',
-      id: { type: 'integer' },
-      firstName: { type: 'string', minLength: 1, maxLength: 255 },
-      lastName: { type: 'string', minLength: 1, maxLength: 255 },
+      email: Joi.string().email({ minDomainAtoms: 2 }).lowercase().required(),
+      password: Joi.string().required(),
+      firstname: Joi.string(),
+      lastname: Joi.string(),
     };
   }
 }

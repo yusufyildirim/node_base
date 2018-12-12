@@ -1,6 +1,5 @@
 {
-    "parser": "babel-eslint",
-    "extends": "airbnb-base",
+    "extends": ["airbnb-base", "plugin:node/recommended"],
     "rules": {
         "object-curly-newline":"off"
     }

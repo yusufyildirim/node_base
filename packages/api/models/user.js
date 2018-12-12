@@ -12,7 +12,7 @@ class User extends BaseModel {
 
   static get schema() {
     return {
-      email: Joi.string().email().lowercase().required(),
+      email: Joi.string().email({ minDomainAtoms: 2 }).lowercase().required(),
       password: Joi.string().required(),
       firstname: Joi.string(),
       lastname: Joi.string(),

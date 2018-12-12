@@ -4,7 +4,7 @@ const hash = require('./hash');
 // Do not use it for now
 const encrypt = {
   name: 'encrypt',
-  validate(params, value) {
+  validate(params, value, state, options) {
     return hash.password(value); // Everything is OK
   },
 };

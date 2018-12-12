@@ -1,12 +1,15 @@
+
+const Joi = require('../utils/joi');
 const { User } = require('../models');
 const { LogicError } = require('../utils/errors');
 const hash = require('../utils/hash');
 const { auth } = require('../middlewares');
 
 async function register(req, res, next) {
-  const { email, password, firstname, lastname } = req.body;
-
   try {
+    const params = await Joi.validate(req.body, User.schema);
+    const { email, password } = params;
+
     const isUserExists = await User
       .query()
       .where('email', email)
@@ -16,12 +19,7 @@ async function register(req, res, next) {
 
     const user = await User
       .query()
-      .insert({
-        email: email.toLowerCase(),
-        password: hash.password(password),
-        firstname,
-        lastname,
-      });
+      .insert({ ...params, password: hash.password(password) });
 
     const token = auth.generateToken(user.id);
 
@@ -32,16 +30,17 @@ async function register(req, res, next) {
 }
 
 async function login(req, res, next) {
-  const { email, password } = req.body;
-
   try {
+    const params = await Joi.validate(req.body, User.schema);
+    const { email, password } = params;
+
     const user = await User
       .query()
-      .where('email', email.toLowerCase())
+      .where('email', email)
       .first();
 
+    
     if (!user) throw new LogicError('username_password_wrong');
-
     const isPasswordMatches = hash.compare(password, user.password);
     if (!isPasswordMatches) throw new LogicError('username_password_wrong');
 

@@ -1,14 +1,14 @@
 module.exports = {
-  url: 'http://localhost:8080/api/v1/',
+  url: 'http://localhost:80/api/v1',
   auth: {
-    email: 'info@orkunakar.com',
+    email: 'test@test.com',
     password: '123123123',
-    newPassword: 'test123',
+    newpassword: 'test123',
   },
   user: {
-    firstName: 'John',
-    lastName: 'Markler',
+    firstname: 'John',
+    lastname: 'Markler',
     email: 'test@test.com',
-    pass: '123123',
+    password: '123123123',
   },
 };

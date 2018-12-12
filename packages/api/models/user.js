@@ -16,7 +16,7 @@ class User extends BaseModel {
       password: Joi.string().required(),
       firstname: Joi.string(),
       lastname: Joi.string(),
-    }
+    };
   }
 }
 

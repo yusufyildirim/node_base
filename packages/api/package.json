@@ -1,9 +1,13 @@
 {
 	"name": "api",
 	"version": "0.1.0",
+	
 	"description": "Node API",
 	"main": "server.js",
 	"author": "Yusuf YILDIRIM",
+	"engines": {
+			"node": ">=10.5.0"
+	},
 	"scripts": {
 		"start": "knex migrate:latest && pm2 start ecosystem.config.js && pm2 logs",
 		"stop": "pm2 delete all"
@@ -31,6 +35,7 @@
 		"eslint": "^5.10.0",
 		"eslint-config-airbnb-base": "^13.1.0",
 		"eslint-plugin-import": "^2.13.0",
+		"eslint-plugin-node": "^8.0.0",
 		"nodemon": "^1.18.7"
 	}
 }

@@ -39,7 +39,6 @@ async function login(req, res, next) {
       .where('email', email)
       .first();
 
-    
     if (!user) throw new LogicError('username_password_wrong');
     const isPasswordMatches = hash.compare(password, user.password);
     if (!isPasswordMatches) throw new LogicError('username_password_wrong');

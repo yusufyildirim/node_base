@@ -2,5 +2,8 @@
     "extends": ["airbnb-base", "plugin:node/recommended"],
     "rules": {
         "object-curly-newline":"off"
+    },
+    "env": {
+        "jest": true
     }
 }

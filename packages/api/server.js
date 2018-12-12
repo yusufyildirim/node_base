@@ -44,5 +44,6 @@ http
   .createServer(app)
   .listen(80);
 
+console.log('=================== Service Started ======================');// eslint-disable-line no-console
 console.log('You can test services by http://localhost:8080/api/v1/docs');// eslint-disable-line no-console
 // console.timeEnd('Startup');

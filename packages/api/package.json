@@ -9,7 +9,8 @@
 	},
 	"scripts": {
 		"start": "knex migrate:latest && pm2 start ecosystem.config.js && pm2 logs",
-		"stop": "pm2 delete all"
+		"stop": "pm2 delete all",
+		"test": "jest tests"
 	},
 	"license": "ISC",
 	"dependencies": {
@@ -35,6 +36,8 @@
 		"eslint-config-airbnb-base": "^13.1.0",
 		"eslint-plugin-import": "^2.13.0",
 		"eslint-plugin-node": "^8.0.0",
-		"nodemon": "^1.18.7"
+		"jest": "^23.6.0",
+		"nodemon": "^1.18.7",
+		"supertest": "^3.3.0"
 	}
 }

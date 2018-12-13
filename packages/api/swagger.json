@@ -5,6 +5,7 @@
       "description":"",
       "version":"1.0"
    },
+   "host": "localhost:8080",
    "basePath": "/api/v1",
    "tags": [
      {
@@ -24,6 +25,7 @@
          "post":{
             "x-swagger-router-controller":"api/v1/example",
             "tags":["auth"],
+            "summary": "Logs user into the system",
             "operationId": "auth_login",
             "description":"Logs user into the system",
             "parameters":[
@@ -56,6 +58,7 @@
          "post":{
             "x-swagger-router-controller":"api/v1/example",
             "tags":["auth"],
+            "summary": "Register user into the system",
             "operationId": "auth_register",
             "description":"Register user into the system",
             "parameters":[
@@ -83,6 +86,7 @@
          "get":{
             "x-swagger-router-controller":"api/v1/example",
             "tags":["test"],
+            "summary": "Service status check",
             "operationId": "test",
             "description":"Test function for checking server is running",
             "parameters":[],

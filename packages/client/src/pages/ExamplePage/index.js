@@ -1,9 +1,7 @@
-// @flow
 import React, { PureComponent } from 'react';
 import styles from './styles.css';
 
-type Props = {};
-export default class ExamplePage extends PureComponent<Props> {
+export default class ExamplePage extends PureComponent {
   render() {
     return (
       <div></div>

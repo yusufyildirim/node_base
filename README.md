@@ -4,6 +4,8 @@ Node / Express / Docker API Boilerplate
 # Steps:
 ## To Start:
 * git clone
+* Go to main directory
+* npm install
 
 ## API Side:
 * docker-compose up
@@ -13,7 +15,7 @@ Node / Express / Docker API Boilerplate
 ## Client Side:
 * Go to packages/client directory
 * npm install
-* parcel index.html
+* npm start
 * http://localhost:1234 to test
 
 ## Docker commands:

@@ -9,5 +9,13 @@
   },
   "author": "Yusuf YILDIRIM",
   "license": "ISC",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "husky": "^1.2.0"
+  },
+  "husky": {
+    "hooks": {
+      "post-merge": "./scripts/file-watcher.sh"
+    }
+  }
 }

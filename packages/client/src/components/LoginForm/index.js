@@ -1,14 +1,11 @@
-// @flow
 import React, { PureComponent } from 'react';
 import { Form, Icon, Input, Button, Checkbox, Alert } from 'antd';
 import { auth } from 'services';
-import flows from 'flows';
 import styles from './styles.css';
 
 const FormItem = Form.Item;
 
-type Props = {};
-class LoginForm extends PureComponent<Props> {
+class LoginForm extends PureComponent {
   state = { loading: false, message: null };
 
   handleSubmit = (e) => {

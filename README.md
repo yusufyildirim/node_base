@@ -10,6 +10,7 @@ Node / Express / Docker API Boilerplate
 ## API Side:
 * docker-compose up
 * http://localhost:8080/api/v1/example to test the api
+* http://localhost:8080/api/v1/docs/ to swagger interface
 * Database: Postgres. Use localhost:5433 to connect to the database from your local.
 
 ## Client Side:

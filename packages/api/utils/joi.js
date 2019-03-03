@@ -4,7 +4,7 @@ const hash = require('./hash');
 // Do not use it for now
 const encrypt = {
   name: 'encrypt',
-  validate(params, value, state, options) {
+  validate(params, value, state, options) { // eslint-disable-line no-unused-vars
     return hash.password(value); // Everything is OK
   },
 };

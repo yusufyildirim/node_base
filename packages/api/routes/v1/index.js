@@ -1,10 +1,13 @@
 const express = require('express');
-const { auth } = require('../../middlewares');
+const { auth, routeChecker } = require('../../middlewares');
 const ExampleRoute = require('./ExampleRoute');
 const AuthRoute = require('./AuthRoute');
+const UserRoute = require('./UserRoute');
 const TestRoute = require('./TestRoute');
 
 const router = express.Router();
+
+router.use(routeChecker.isExist);
 
 // Auth not required
 router.use('/example', ExampleRoute);
@@ -13,6 +16,8 @@ router.use('/test', TestRoute);
 
 // Auth required
 router.use(auth.isAuthenticated);
-// router.use('/example', ExampleRoute);
+// router.use(auth.isAuthorized);
+router.use('/user', UserRoute);
+
 
 module.exports = router;

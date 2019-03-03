@@ -3,6 +3,9 @@
 async function root(req, res, next) {
   try {
     // throw new LogicError('test_error')
+    // setTimeout(function() {
+    //   return res.json({ result: Date.now() });
+    // }, 10 * 1000);
     return res.json({ result: Date.now() });
   } catch (e) {
     // if you throw an error in the try block, it'll catch in this catch block

@@ -82,6 +82,60 @@
             }
          }
       },
+      "/user": {
+      "get": {
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "user"
+        ],
+        "summary": "Get User lists",
+        "parameters": [
+          {
+            "name": "search",
+            "in": "query",
+            "type": "string",
+            "description": "search keyword"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "type": "number"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "type": "number"
+          },
+          {
+            "name": "column",
+            "in": "query",
+            "type": "string",
+            "description": "Table column name"
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "type": "string",
+            "description": "asc or desc"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid  operation"
+          },
+          "401": {
+            "description": "Authorization error"
+          }
+        }
+      }
+    },
       "/test":{
          "get":{
             "x-swagger-router-controller":"api/v1/example",
@@ -93,6 +147,13 @@
             "responses":{}
          }
       }
+   },
+   "securityDefinitions": {
+    "Bearer": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
    },
    "definitions": {
     "User": {

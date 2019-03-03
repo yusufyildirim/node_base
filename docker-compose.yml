@@ -8,6 +8,11 @@ services:
     volumes:
       - ./volumes/postgresql:/var/lib/postgresql/data
 
+  redis:
+    image: redis:5.0.3-alpine
+    ports:
+      - '6380:6379'
+
   api:
     build: .
     volumes:
@@ -20,4 +25,5 @@ services:
       - CHOKIDAR_USEPOLLING=true
     depends_on:
       - "db"
+      - "redis"
     command: ["./scripts/wait-for-it.sh", "db:5432", "--", "npm", "start"] # Wait for postgres
